@@ -1,4 +1,5 @@
 FROM alpine:3.3
+USER root
 ENV CF_CLI_VERSION "6.26.0"
 ENV PACKAGES "unzip curl"
 RUN apk add --update $PACKAGES && rm -rf /var/cache/apk/*
