@@ -1,6 +1,5 @@
-FROM alpine:3.3
+FROM alpine:3.10.1
 USER root
-ENV CF_CLI_VERSION "6.26.0"
 ENV PACKAGES "unzip curl"
 RUN apk add --update $PACKAGES && rm -rf /var/cache/apk/*
-RUN curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&version=${CF_CLI_VERSION}" | tar -zx -C /usr/local/bin
+RUN curl -L "https://packages.cloudfoundry.org/stable?release=linux64-binary&source=github" | tar -zx -C /usr/local/bin
